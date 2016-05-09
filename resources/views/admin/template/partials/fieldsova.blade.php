@@ -22,6 +22,7 @@
 		<h3>{!! Form::label('archive','Archivo',["for"=>"archive","class"=>"label label-primary"]) !!}
 		{!! Form::text('archive', null, ['class' => 'form-control','readonly'=>'readonly','required']) !!}
 		<input type="file" id="archive" class="form-control" name="archive2"></h3>
+		<h6>Tamaño máximo: 40 MB</h6>
 </div>
 <div class="form-group">
 	<h3>{!! Form::label('type_id','Tipo',["class"=>"label label-primary"]) !!}</h3>

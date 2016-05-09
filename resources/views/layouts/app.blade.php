@@ -156,24 +156,28 @@
                                 </center>
                                 @if (Auth::guest())   <!-- Condicion inicio de sesion-->
                                 @else
-                                <div>
-                                    <br><br>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div class="panel-title">
-                                                Mensajes
-                                            </div>  
-                                            </div>                                             
-                                            <div class="panel-body">
-                                                    <div id="mensajes">
-                                                    
-                                                    </div>
-                                                    <audio src="/sonidos/Sonido.mp3" preload>
-                                                        Tu explorador no soporta audio en HTML
-                                                    </audio>
-                                            </div>                                                                     
-                                    </div>
-                                </div>
+                                <noscript>
+                                    @yield('chat')
+                                </noscript>
+                                <script type="text/javascript">
+                                    document.write("<div>");
+                                    document.write("<br><br>");
+                                    document.write("<div class='panel panel-default'>");
+                                    document.write("<div class='panel-heading'>");
+                                    document.write("<div class='panel-title'>");
+                                    document.write("Mensajes");
+                                    document.write("</div>");
+                                    document.write("</div>");
+                                    document.write("<div class='panel-body'>");
+                                    document.write("<div id='mensajes'>");
+                                    document.write("</div>");
+                                    document.write("<audio src='/sonidos/Sonido.mp3' preload>");
+                                    document.write("Tu explorador no soporta audio en HTML");
+                                    document.write("</audio>");
+                                    document.write("</div>");
+                                    document.write("</div>");
+                                    document.write("</div>");
+                                </script>
                                 @endif
                             </div>
                         </div>
@@ -200,7 +204,7 @@
         <script>
             $(document).on("ready", function(){             
                 $.ajaxSetup({"cache":false});   //Uso del ajax para envio de mensaje
-                setInterval("loadMessages()",3000);
+                setInterval("loadMessages()",5000);
             });
             var infor1=null;
             var infor2=null;

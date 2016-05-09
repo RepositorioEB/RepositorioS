@@ -12,7 +12,9 @@
     <p>Cada uno de los usuarios que utilice este repositorio podr&aacute; realizar la comunicación con los demás usuarios y contar con la ayuda de los administradores. </p>
     <p>&nbsp;</p>
     <h2>Video de registro</h2>
-	<video controls>
-  		<source src="{{asset('videos/help_7VideoRegistroConfirmacion.mp4')}}">
-	</video>
+	<div class="table-responsive">
+        <video controls>
+            <source src="{{asset('videos/help_7VideoRegistroConfirmacion.mp4')}}">
+        </video>
+    </div>
 @endsection

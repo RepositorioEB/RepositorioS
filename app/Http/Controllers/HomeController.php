@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\User_Chat;
+use DB;
 
 class HomeController extends Controller
 {
@@ -24,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $users_chats = DB::table('users_chats')->orderBy('created_at','DESC')->get();   
+        return view('home')->with("users_chats",$users_chats);
     }
 }

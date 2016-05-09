@@ -31,11 +31,17 @@ class OvaMemberController extends Controller
         }
 
         $file = $request->file('archive2');
+        $filesize =filesize($request->file('archive2'))/1024/1024; 
+        
         if($file==null){
             Flash::error("Debe ingresar el archivo.");
             return redirect()->route('ovas.ovamember.create');
         }else
         {
+            if($filesize>40){
+                Flash::error("El tamaño del OVA debe ser menor a 40 MB");
+                return redirect()->route('ovas.ovamember.create');
+            }else{
             $cont = substr_count($file->getClientOriginalName(), '.');
             $arrayNombre = explode(".", $file->getClientOriginalName(), ($cont+1));
             $tam=sizeof($arrayNombre);
@@ -56,6 +62,7 @@ class OvaMemberController extends Controller
             }else{
                 Flash::error("El archivo debe ser .rar ó .zip.");
                 return redirect()->route('ovas.ovamember.create');
+            }
             }
         }
     }

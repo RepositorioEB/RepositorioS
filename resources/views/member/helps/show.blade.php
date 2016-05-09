@@ -14,9 +14,11 @@
 	</section> 
 	<section>
 		<h2>Video</h2>
-		<video controls autoplay>
-  			<source src="{{asset('videos/'.$help->video.'')}}">
-		</video>
+		<div class="table-responsive">
+    		<video controls autoplay>
+  				<source src="{{asset('videos/'.$help->video.'')}}">
+			</video>
+		</div>
 	</section>
 	<section>
 		<div id="disqus_thread"></div>

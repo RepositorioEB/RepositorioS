@@ -74,8 +74,8 @@ class HelpController extends Controller
             return redirect()->route('admin.helps.create');
         }else
         {
-            if($filesize>60){
-                Flash::error("El tamaño del video debe ser menor a 60 MB");
+            if($filesize>40){
+                Flash::error("El tamaño del video debe ser menor a 40 MB");
                 return redirect()->route('admin.helps.create');
             }else{
             $cont = substr_count($file->getClientOriginalName(), '.');
@@ -140,7 +140,13 @@ class HelpController extends Controller
         $helps = Help::find($id);
         $helps->fill($request->all());
         $file = $request->file('video2');
+        $filesize =filesize($request->file('video2'))/1024/1024; 
+
         if($file != null){
+            if($filesize>40){
+                Flash::error("El tamaño del video debe ser menor a 40 MB");
+                return redirect()->route('admin.helps.edit',$id);
+            }else{
             $nombre = $file->getClientOriginalName();
             $path = public_path().'/videos/';
             \File::delete($path.$helps->video);
@@ -148,6 +154,7 @@ class HelpController extends Controller
             $path = public_path().'/videos/';
             $file->move($path, $nombre);
             $helps->video = $nombre;
+            }
         }
         $helps->save();
         Flash::warning("Se ha actualizado la ayuda " .$helps->name. " con exito!");

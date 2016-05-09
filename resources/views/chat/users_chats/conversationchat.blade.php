@@ -71,7 +71,7 @@
             
             $(document).on("ready", function(){             
                 $.ajaxSetup({"cache":false});   //Uso del ajax para envio de mensaje
-                setInterval("loadOldMessages()",1000);
+                setInterval("loadOldMessages()",2000);
                 $("#conversation p:last-child").css({"background-color":"black",
                                                         "padding-botton":"20px"});
                         var altura= $("#conversation").prop("scrollHeight");

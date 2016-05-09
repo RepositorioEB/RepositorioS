@@ -112,11 +112,17 @@ class OvaController extends Controller
             }
         }
         $file = $request->file('archive2');
+        $filesize =filesize($request->file('archive2'))/1024/1024; 
+        
         if($file==null){
             Flash::error("Debe ingresar el archivo.");
             return redirect()->route('admin.ovas.create');
         }else
         {
+            if($filesize>40){
+                Flash::error("El tamaño del OVA debe ser menor a 40 MB");
+                return redirect()->route('admin.ovas.create');
+            }else{
             $cont = substr_count($file->getClientOriginalName(), '.');
             $arrayNombre = explode(".", $file->getClientOriginalName(), ($cont+1));
             $tam=sizeof($arrayNombre);
@@ -136,7 +142,8 @@ class OvaController extends Controller
                 return redirect()->route('admin.ovas.index');
             }else{
                 Flash::error("El archivo debe ser .rar ó .zip.");
-                return redirect()->route('ovas.ovamember.create');
+                return redirect()->route('admin.ovas.create');
+            }
             }
         }
     }
@@ -179,6 +186,8 @@ class OvaController extends Controller
     public function update(OvaRequest $request, $id)
     {
         $file = $request->file('archive2');
+        $filesize =filesize($request->file('archive2'))/1024/1024; 
+        
         $ova = Ova::find($id);
         $ovaslist = Ova::orderBy('id','ASC')->where('id','!=',$id)->lists('name', 'id');
         foreach ($ovaslist as $lista) {
@@ -189,11 +198,16 @@ class OvaController extends Controller
         }
         $ova->fill($request->all());
         if($file != null){
-            $nombre = $file->getClientOriginalName();
-            \Storage::delete($request->archive);    
-            $nombre = $ova->id.$nombre;
-            \Storage::disk('local')->put($nombre,  \File::get($file));
-            $ova->archive = $nombre;
+            if($filesize>40){
+                Flash::error("El tamaño del OVA debe ser menor a 40 MB");
+                return redirect()->route('admin.ovas.edit',$id);
+            }else{
+                $nombre = $file->getClientOriginalName();
+                \Storage::delete($request->archive);    
+                $nombre = $ova->id.$nombre;
+                \Storage::disk('local')->put($nombre,  \File::get($file));
+                $ova->archive = $nombre;
+            }
         }
         $arrayNombre = explode(" ", $request->name);
         $slug="";
@@ -209,7 +223,7 @@ class OvaController extends Controller
         $ova->slug =$slug;
         $ova->save();
 
-        Flash::warning("Se ha actualizado el ova " .$ova->id. " con exito!");
+        Flash::warning("Se ha actualizado el ova " .$ova->name. " con exito!");
         return redirect()->route('admin.ovas.index');
     }
 
