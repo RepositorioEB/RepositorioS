@@ -23,7 +23,6 @@
 				<th>Nº</th>               <!-- Nombre columna-->
 				<th>Nombre</th>       <!-- Nombre columna-->
 				<th>Descripción</th>
-				<th>Video</th>
 				<th>Acción</th>
 			</thead>
 			<tbody>         <!-- Cuerpo tabla-->
@@ -36,10 +35,6 @@
 						<td>{!! $cont++; !!}</td>            <!-- Contador-->
 						<td>{{ $help->name }}</td>         <!-- Nombre de la ayuda-->
 						<td>{!! $replace=str_replace("\r","<br>",$help->description); !!}</td>     <!-- Descripcion de la ayuda-->
-						<td><video width="300" controls>
-  								<source src="{{asset('videos/'.$help->video.'')}}">
-							</video>
-						</td>
 						<td>
 							<a href="{{ route('admin.helps.edit', $help->id) }}" class="btn btn-warning" title="Editar ayuda"><span class="glyphicon glyphicon-wrench" aria-hidden="true">Editar</span></a>            <!-- Enlace para editar la ayuda-->
 							<a href="{{ route('admin.helps.destroy', $help->id) }}" onclick="return confirm('¿Seguro que quieres eliminarlo?')" class="btn btn-danger" title="Eliminar ayuda"><span class="glyphicon glyphicon-trash" aria-hidden="true">Eliminar</span></a>           <!-- Enlace para eliminar la ayuda-->
