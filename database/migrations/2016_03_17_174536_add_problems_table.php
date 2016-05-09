@@ -16,6 +16,7 @@ class AddProblemsTable extends Migration
             $table->increments('id');
             $table->string('name',30);
             $table->text('description');
+            $table->text('solution');
             $table->boolean('state')->default(false);
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

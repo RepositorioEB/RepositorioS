@@ -3,15 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use App\Ova;
-
 use App\User;
-
 use App\Download;
-
 use Laracasts\Flash\Flash;
 
 class DownloadController extends Controller

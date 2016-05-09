@@ -3,15 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use App\Category;
-
 use App\Http\Requests\CategoryRequest;
-
 use Laracasts\Flash\Flash;
-
 use Illuminate\Support\Facades\Redirect;
 
 class CategoryController extends Controller

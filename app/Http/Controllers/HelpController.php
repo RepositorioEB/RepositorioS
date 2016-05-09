@@ -3,19 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use Laracasts\Flash\Flash;
-
 use App\User;
-
 use App\Url;
-
 use App\Help;
-
 use Illuminate\Support\Facades\Redirect;
-
 use App\Http\Requests\HelpRequest;
 
 class HelpController extends Controller

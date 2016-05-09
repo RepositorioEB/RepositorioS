@@ -236,10 +236,10 @@ Route::group(['middleware' => 'web'], function () {
             ]);
 
             Route::resource('forums', 'ForumController');
-             Route::resource('problems', 'ProblemController');
+            Route::resource('problems', 'ProblemController');
             Route::get('problems/{id}/destroy', [
-            'uses' => 'ProblemController@destroy',
-            'as' => 'member.problems.destroy'
+              'as' => 'member.problems.destroy',
+              'uses' => 'ProblemController@destroy'
             ]);
             /*Route::get('helps',[
             'uses' => 'HelpController@listas',

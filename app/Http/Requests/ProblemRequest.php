@@ -24,8 +24,9 @@ class ProblemRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'min:5|max:30|regex:/^[\pL\s\-]+$/u|required',
+            'name'        => 'min:5|max:30|regex:/^[\pL\s\-]+$/u|required',
             'description' => 'min:20|required',
+            'solution'    => 'min:20'
         ];
     }
 }

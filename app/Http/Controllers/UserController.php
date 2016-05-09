@@ -3,21 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\User1Request;
 use Laracasts\Flash\Flash;
-
 use App\User;
-
 use App\Profile;
-
 use App\Country;
-
 use Carbon\Carbon;
-
 use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller

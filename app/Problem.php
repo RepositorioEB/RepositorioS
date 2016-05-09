@@ -3,14 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
 use App\User;
 
 class Problem extends Model
 {
     protected $table = "problems";
 
-    protected $fillable = ['name','description', 'state','user_id'];
+    protected $fillable = ['name','description', 'solution', 'state','user_id'];
 
     public function user()
     {

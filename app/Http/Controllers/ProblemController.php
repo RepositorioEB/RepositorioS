@@ -3,18 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use Laracasts\Flash\Flash;
-
 use App\User;
-
 use App\Problem;
-
 use Illuminate\Support\Facades\Redirect;
-
 use App\Http\Requests\ProblemRequest;
+use App\Http\Requests\ProblemsRequest;
 
 class ProblemController extends Controller
 {
@@ -80,7 +75,12 @@ class ProblemController extends Controller
      */
     public function show($id)
     {
-        
+        $problem = Problem::find($id);
+        if (\Auth::user()->role == 'admin') {
+            return view('admin.problems.show')->with('problem', $problem);
+        }else{
+            return view('member.problems.show')->with('problem', $problem);
+        }
     }
 
     /**
@@ -102,7 +102,7 @@ class ProblemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProblemRequest $request, $id)
+    public function update(ProblemsRequest $request, $id)
     {
         $problems = Problem::find($id);
         $problems->fill($request->all());
