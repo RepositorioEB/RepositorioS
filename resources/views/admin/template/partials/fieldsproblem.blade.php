@@ -8,6 +8,10 @@
 	{!! Form::textarea('description', null, ['class' => 'form-control','placeholder' => 'Descripción (Minimo 20 caracteres)']) !!}
 </div>
 <div class="form-group">
+	<h3>{!! Form::label('solution','Solucion',['class'=>'label label-primary']) !!}</h3>
+	{!! Form::textarea('solution', null, ['class' => 'form-control','placeholder' => 'Solucion (Minimo 20 caracteres)']) !!}
+</div>
+<div class="form-group">
 	<h3>{!! Form::label('state','Estado del problema',['class'=>'label label-primary']) !!}</h3>
 	{!! Form::select('state', [ false => 'Sin resolver', true => 'Resuelto'], null, ['class' => 'form-control select-state','required']) !!}
 </div>

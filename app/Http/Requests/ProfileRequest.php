@@ -24,7 +24,7 @@ class ProfileRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'min:4|max:20|regex:/^[\pL\s\-]+$/u|required',
+            'name'           => 'min:4|max:20|regex:/^[\pL\s\-]+$/u|required',
             'characteristic' => 'min:20|required'
         ];
     }

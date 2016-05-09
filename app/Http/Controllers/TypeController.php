@@ -3,15 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use App\Type;
-
 use App\Http\Requests\TypeRequest;
-
 use Illuminate\Support\Facades\Redirect;
-
 use Laracasts\Flash\Flash;
 
 class TypeController extends Controller

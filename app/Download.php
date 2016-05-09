@@ -3,9 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
 use App\User;
-
 use App\Ova;
 
 class Download extends Model

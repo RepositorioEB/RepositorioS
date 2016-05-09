@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class User1Request extends Request
+class ProblemsRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,9 @@ class User1Request extends Request
     public function rules()
     {
         return [
-            'name'       => 'min:4|max:30|regex:/^[\pL\s\-]+$/u|required',
-            'last_name'  => 'max:30|regex:/^[\pL\s\-]+$/u',
-            'gender'     => 'required',
-            'country'    => 'required',
-            'studies'    => 'min:20',
-            'profile_id' => 'required'
+            'name'        => 'min:5|max:30|regex:/^[\pL\s\-]+$/u|required',
+            'description' => 'min:20|required',
+            'solution'    => 'min:20|required'
         ];
     }
 }

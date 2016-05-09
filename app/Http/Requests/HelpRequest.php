@@ -24,8 +24,8 @@ class HelpRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'min:5|max:20|regex:/^[\pL\s\-]+$/u|required',
-            'video' => 'required',
+            'name'        => 'min:5|max:20|regex:/^[\pL\s\-]+$/u|required',
+            'video'       => 'required',
             'description' => 'min:20|required'
         ];
     }

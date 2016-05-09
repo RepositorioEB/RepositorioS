@@ -25,6 +25,7 @@
 				<th>Estado</th>
 				<th>Creador</th>
 				<th>Acción</th>
+				<th>Solucion</th>
 			</thead>
 			<tbody>
 				<?php
@@ -45,6 +46,11 @@
 							<a href="{{ route('admin.problems.edit', $problem->id) }}" class="btn btn-warning" title="Editar pronlema"><span class="glyphicon glyphicon-wrench" aria-hidden="true">Editar</span></a>          <!--Enñlace editar problema -->
 							<a href="{{ route('admin.problems.destroy', $problem->id) }}" onclick="return confirm('¿Seguro que quieres eliminarlo?')" class="btn btn-danger" title="Eliminar problema"><span class="glyphicon glyphicon-trash" aria-hidden="true">Eliminar</span></a>   <!-- Enlace eliminar problema-->
 						</td>
+						@if($problem->solution == '' OR $problem->state == 0)
+							<td><a href="#" class="btn btn-info disabled" title="Consultar"><span class="glyphicon glyphicon-folder-open" aria-hidden="true">Visualizar</span></a></td>
+						@else
+							<td><a href="{{ route('admin.problems.show', $problem->id) }}" class="btn btn-info" title="Consultar"><span class="glyphicon glyphicon-folder-open" aria-hidden="true">Visualizar</span></a></td>
+						@endif
 					</tr>
 				@endforeach
 			</tbody>	

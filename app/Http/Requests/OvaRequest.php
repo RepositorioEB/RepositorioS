@@ -24,11 +24,11 @@ class OvaRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'min:5|max:255|regex:/^[\pL\s\-]+$/u|required',
-            'language' => 'max:15',
+            'name'        => 'min:5|max:255|regex:/^[\pL\s\-]+$/u|required',
+            'language'    => 'max:15',
             'description' => 'min:20',
-            //'archive' => 'max:255|required',
-            'type_id' => 'required',
+            //'archive'   => 'max:255|required',
+            'type_id'     => 'required',
             'category_id' => 'required'
         ];
     }

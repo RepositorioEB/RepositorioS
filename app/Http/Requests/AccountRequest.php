@@ -24,13 +24,13 @@ class AccountRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'min:4|max:30|regex:/^[\pL\s\-]+$/u|required',
-            'last_name' => 'max:30|regex:/^[\pL\s\-]+$/u',
-            'username' => 'min:4|max:10|alpha_num|required',
-            'email' => 'min:7|max:30|required',
-            'gender' => 'required',
-            'date' => 'required',
-            'photo' => 'image',
+            'name'       => 'min:4|max:30|regex:/^[\pL\s\-]+$/u|required',
+            'last_name'  => 'max:30|regex:/^[\pL\s\-]+$/u',
+            'username'   => 'min:4|max:10|alpha_num|required',
+            'email'      => 'min:7|max:30|required',
+            'gender'     => 'required',
+            'date'       => 'required',
+            'photo'      => 'image',
             'profile_id' => 'required'
         ];
     }

@@ -32,6 +32,7 @@
 				<th>Nombre</th>
 				<th>Descripción</th>
 				<th>Estado</th>
+				<th>Solucion</th>
 			</thead>
 			<tbody>
 				@foreach($problems as $problem)    <!-- Ciclo de problemas-->
@@ -43,6 +44,11 @@
 							<td><h4><span class="label label-primary">Sin resolver</span></h4></td>
 						@else
 							<td><h4><span class="label label-danger">Resuelto</span></h4></td>
+						@endif
+						@if($problem->solution == '' OR $problem->state == 0)
+							<td><a href="#" class="btn btn-info disabled" title="Consultar"><span class="glyphicon glyphicon-folder-open" aria-hidden="true">Visualizar</span></a></td>
+						@else
+							<td><a href="{{ route('member.problems.show', $problem->id) }}" class="btn btn-info" title="Consultar"><span class="glyphicon glyphicon-folder-open" aria-hidden="true">Visualizar</span></a></td>
 						@endif
 						</tr>
 					@endif
