@@ -15,9 +15,15 @@
 	<section>
 		<h2>Video</h2>
 		<div class="table-responsive">
-    		<video controls autoplay>
+		@if($help->subtitles == true)
+			<video controls autoplay>
+  				<source src="{{asset('videos/subtitles/'.$help->video.'')}}">
+			</video>
+		@else
+			<video controls autoplay>
   				<source src="{{asset('videos/'.$help->video.'')}}">
 			</video>
+		@endif
 		</div>
 	</section>
 	<section>

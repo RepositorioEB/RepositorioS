@@ -88,7 +88,11 @@ class HelpController extends Controller
                 $help->user_id = \Auth::user()->id;
                 $help->save();
                 $nombre = "help_".$help->id.$nombre;
-                $path = public_path().'/videos/';
+                if($help->subtitles == true){
+                    $path = public_path().'/videos/subtitles/';
+                }else{
+                    $path = public_path().'/videos/';
+                }
                 $file->move($path, $nombre);
                 $help->video = $nombre;
                 $help->save();
@@ -112,9 +116,26 @@ class HelpController extends Controller
      */
     public function show($id)
     {
-        $help = Help::find($id);   
-        return view('member.helps.show')->with('help',$help);
+        $help = Help::find($id);
+        if(\Auth::user()->role =='admin'){
+            return view('member.helps.show')->with('help',$help);
+        }else{
+        if(\Auth::user()->profile->name =='Deficiencia auditiva y sordera'){
+            if($help->subtitles ==true){
+                return view('member.helps.show')->with('help',$help);
+            }else{
+                return redirect()->route('helps.list');
+            }            
+        }else{
+            if($help->subtitles ==false){
+                return view('member.helps.show')->with('help',$help);
+            }else{
+                return redirect()->route('helps.list');
+            }
+        }
+        }   
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -148,7 +169,11 @@ class HelpController extends Controller
                 return redirect()->route('admin.helps.edit',$id);
             }else{
             $nombre = $file->getClientOriginalName();
-            $path = public_path().'/videos/';
+            if($helps->subtitles == true){
+                $path = public_path().'/videos/subtitles/';
+            }else{
+                $path = public_path().'/videos/';
+            }
             \File::delete($path.$helps->video);
             $nombre = "help_".$helps->id.$nombre;
             $path = public_path().'/videos/';
@@ -170,7 +195,11 @@ class HelpController extends Controller
     public function destroy($id)
     {
         $helps = Help::find($id);
-        $path = public_path().'/videos/';
+        if($helps->subtitles == true){
+            $path = public_path().'/videos/subtitles/';
+        }else{
+            $path = public_path().'/videos/';
+        }
         \File::delete($path.$helps->video);
         $helps->delete();
         Flash::error('La ayuda ' .$helps->name. ' ha sido borrado con exito!');
@@ -180,8 +209,11 @@ class HelpController extends Controller
     public function listas(Request $request)
     {
         $helps = Help::SearchName($request->name)->orderBy('id', 'ASC')->first();
-        $helps = Help::SearchName($request->name)->orderBy('id', 'ASC')->paginate(10);
-        
+        if(\Auth::user()->profile->name =='Deficiencia auditiva y sordera'){
+            $helps = Help::SearchName($request->name)->orderBy('id', 'ASC')->where('subtitles',true)->paginate(10);
+        }else{
+            $helps = Help::SearchName($request->name)->orderBy('id', 'ASC')->where('subtitles',false)->paginate(10);
+        }
         $helps->each(function($helps){
             $helps->user;
         });

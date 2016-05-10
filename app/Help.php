@@ -8,7 +8,7 @@ class Help extends Model
 {
     protected $table = "helps";
 
-    protected $fillable = ['name','video','description','user_id'];
+    protected $fillable = ['name','video','description','subtitles','user_id'];
 
     public function user()
     {

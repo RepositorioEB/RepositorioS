@@ -23,6 +23,7 @@
 				<th>Nº</th>               <!-- Nombre columna-->
 				<th>Nombre</th>
 				<th>Descripción</th>
+				<th>Subtítulos</th>
 				<th>Creador</th>
 				<th>Acción</th>
 			</thead>
@@ -35,8 +36,16 @@
 						<td>{!! $cont++; !!}</td>            <!-- Contador-->
 						<td>{{ $help->name }}</td>          <!-- Nombre ayuda-->
 						<td>{!! $replace=str_replace("\r","<br>",$help->description); !!}</td>          <!-- Descripcion ayuda-->
+						<td>
+							@if ($help->subtitles)             <!-- Mostrar etiqueta segun estado-->
+								<h4><span class="label label-danger">{{ 'Si' }}</span></h4>
+							@else
+								<h4><span class="label label-primary">{{ 'No' }}</span></h4>
+							@endif
+						</td>
 						<td>{{ $help->user->name }}</td>          <!-- Nombre creador ayuda-->
 						<td>
+							<a href="{{ route('helps.show', $help->id) }}" class="btn btn-info" title="Consultar"><span class="glyphicon glyphicon-folder-open" aria-hidden="true">Visualizar</span></a>   <!-- Enlace para seleccionar la ayuda que desea consultar--> 
 							<a href="{{ route('admin.helps.edit', $help->id) }}" class="btn btn-warning" title="Editar ayuda"><span class="glyphicon glyphicon-wrench" aria-hidden="true">Editar</span></a>          <!-- Enlace para modificar la ayuda-->
 							<a href="{{ route('admin.helps.destroy', $help->id) }}" onclick="return confirm('¿Seguro que quieres eliminarlo?')" class="btn btn-danger" title="Eliminar ayuda"><span class="glyphicon glyphicon-trash" aria-hidden="true">Eliminar</span></a>         <!-- Enlace para eliminar la ayuda-->
 						</td>

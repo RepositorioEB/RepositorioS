@@ -10,7 +10,11 @@ use App\Help;
 class HelpRecentArchiveController extends Controller
 {
     public function index(){
-    	$helps = Help::orderBy('id', 'DES')->paginate(10);
+    	if(\Auth::user()->profile->name =='Deficiencia auditiva y sordera'){
+        	$helps = Help::orderBy('id', 'DES')->where('subtitles',true)->paginate(10);
+        }else{
+        	$helps = Help::orderBy('id', 'DES')->where('subtitles',false)->paginate(10);
+        }
         return view('member.helps.recentarchive.index')->with("helps",$helps);
     }
 }

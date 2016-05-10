@@ -36,7 +36,7 @@
 						<td>
 							<a href="{{ route('helps.show', $help->id) }}" class="btn btn-info" title="Consultar"><span class="glyphicon glyphicon-folder-open" aria-hidden="true">Visualizar</span></a>   <!-- Enlace para seleccionar la ayuda que desea consultar--> 
 						</td>
-					</tr>
+					</tr>		
 				@endforeach
 			</tbody>	
 		</table>

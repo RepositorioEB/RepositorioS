@@ -17,6 +17,7 @@ class AddHelpsTable extends Migration
             $table->string('name',40)->unique();
             $table->string('video');
             $table->text('description')->nullable();
+            $table->boolean('subtitles')->default(false);
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

@@ -26,10 +26,22 @@ class MainSearchController extends Controller
             $categoriesdescription = Category::SearchCategoryDescription($request->search)->orderBy('id','ASC')->paginate(20);        
             $typesdescription = Type::SearchTypeDescription($request->search)->orderBy('id','ASC')->paginate(20);
             $forumsname = Forum::SearchForum($request->search)->orderBy('id','ASC')->paginate(20);
-            $forumscharacteristic = Forum::SearchForumCharacteristic($request->search)->orderBy('id','ASC')->paginate(20);        
-            $helpsname = Help::SearchName($request->search)->orderBy('id','ASC')->paginate(20);
-            $helpsvideo = Help::SearchVideo($request->search)->orderBy('id','ASC')->paginate(20);   
-            $helpsdescription = Help::SearchDescription($request->search)->orderBy('id','ASC')->paginate(20);               
+            $forumscharacteristic = Forum::SearchForumCharacteristic($request->search)->orderBy('id','ASC')->paginate(20);
+            if(\Auth::user()->profile->name =='Deficiencia auditiva y sordera'){
+                $helpsname = Help::SearchName($request->search)->orderBy('id','ASC')->where('subtitles',true)->paginate(20);
+            }else{
+                $helpsname = Help::SearchName($request->search)->orderBy('id','ASC')->where('subtitles',false)->paginate(20);
+            }        
+            if(\Auth::user()->profile->name =='Deficiencia auditiva y sordera'){
+                $helpsvideo = Help::SearchVideo($request->search)->orderBy('id','ASC')->where('subtitles',true)->paginate(20);   
+            }else{
+                $helpsvideo = Help::SearchVideo($request->search)->orderBy('id','ASC')->where('subtitles',false)->paginate(20);   
+            }        
+            if(\Auth::user()->profile->name =='Deficiencia auditiva y sordera'){
+                $helpsdescription = Help::SearchDescription($request->search)->orderBy('id','ASC')->where('subtitles',true)->paginate(20);               
+            }else{
+                $helpsdescription = Help::SearchDescription($request->search)->orderBy('id','ASC')->where('subtitles',false)->paginate(20);               
+            }        
             return view('mainsearch.index') ->with("ovasname",$ovasname)
                                         ->with("ovasarchive",$ovasarchive)
                                         ->with("ovascategory",$ovascategory)

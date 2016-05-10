@@ -14,7 +14,67 @@
     <h2>Video de registro</h2>
 	<div class="table-responsive">
         <video controls>
-            <source src="{{asset('videos/help_7VideoRegistroConfirmacion.mp4')}}">
+            <source src="{{asset('videos/subtitles/help_7VideoRegistroConfirmacion.mp4')}}">
         </video>
     </div>
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 1:
+Seleccionar el botón registrarse.
+
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 2:
+Ingresar datos en los campos.
+
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 3:
+Seleccionar el botón registrar.
+
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 4: Seleccionar el botón aceptar.
+
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 5:
+Copiar contraseña enviada al correo.
+
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 6:
+Seleccionar el botón ingresar.
+
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 7:
+Ingresar correo y contraseña copiada.
+
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 8:
+Seleccionar perfíl.
+
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 9:
+Seleccionar modificar contraseña.
+
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 10:
+Ingresar contraseña actual.
+
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 11:
+Ingresar contraseña nueva.
+
+<br><br>
+<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
+Paso 12:
+Seleccionar botón guardar.
+<br><br>
+
 @endsection

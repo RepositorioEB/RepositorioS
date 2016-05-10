@@ -4,7 +4,7 @@
 	{!! Form::text('name', null, ['class' => 'form-control','placeholder' => 'Nombre completo (Minimo 5 caracteres)','required']) !!}
 </div>
 <div class="form-group">
-	<h3>{!! Form::label('video','Enlace',['class'=>'label label-primary']) !!}</h3>
+	<h3>{!! Form::label('video','Video',['class'=>'label label-primary']) !!}</h3>
 	{!! Form::text('video', null, ['class' => 'form-control','readonly'=>'readonly','required']) !!}
 	<input type="file" id="video" class="form-control" name="video2" placeholder="Hola"></h3>
 	<h6>Tamaño máximo: 40 MB</h6>
@@ -12,4 +12,8 @@
 <div class="form-group">
 	<h3>{!! Form::label('description','Descripcion',['class'=>'label label-primary']) !!}</h3>
 	{!! Form::textarea('description', null, ['class' => 'form-control','placeholder' => 'Descripción (Minimo 20 caracteres)']) !!}
+</div>
+<div class="form-group">
+	<h3>{!! Form::label('subtitles','Subtítulos',['class'=>'label label-primary']) !!}</h3>
+	{!! Form::select('subtitles', [ false => 'No', true => 'Si'], null, ['class' => 'form-control select-subtitles','required']) !!}
 </div>
