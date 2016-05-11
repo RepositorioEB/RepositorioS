@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img alt="Universidad Distrital"  class="admin-logo-nav" src="{{ asset('images/logos.png') }}" width=75 height=75></img>
+      <img alt="Universidad Distrital"  class="admin-logo-nav" src="{{ asset('images/logos.png') }}" width=75 height=75 />
 
     </div>
 
@@ -18,7 +18,7 @@
             <a class="navbar-brand" href="{{url('rovaa')}}">ROVAA</a>      
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="{{ url('/') }}" title="Home"><span class="glyphicon glyphicon-home"></span></span>Inicio</a></li>
+            <li class="active"><a href="{{ url('/') }}" title="Home"><span class="glyphicon glyphicon-home"></span>Inicio</a></li>
             <!-- Authentication Links -->
             @if (Auth::guest())
                 <li><a href="{{ url('/login') }}" title="Ingresar al repositorio">Ingresar</a></li>

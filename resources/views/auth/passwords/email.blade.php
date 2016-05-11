@@ -2,7 +2,7 @@
 
 <!-- Main Content -->
 
-@section('title', 'Envío Correo')
+@section('title', 'Envío de Correo')
 @section('content')
         <br><br><br>
         @if (session('status'))
@@ -15,10 +15,10 @@
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Correo electrónico: </label>    
+                            <label for="email" class="col-md-4 control-label">Correo electrónico: </label>    
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}"><!--Campo de correo para la password del usuario-->
+                                <input type="email" id="email" class="form-control" name="email" value="{{ old('email') }}"><!--Campo de correo para la password del usuario-->
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-envelope"></i>Enviar link al correo
+                                    <span class="fa fa-btn fa-envelope"></span>Enviar link al correo
                                 </button>
                             </div>
                         </div>

@@ -2,9 +2,9 @@
 
 @section('title', 'Inicio')
 @section('content')
-    <center>
-        <h1>Repositorio de Objetos Virtuales de Aprendizaje Accesible</h>  <!-- Titulo-->
-    </center>
+    <div align="center">
+        <h1>Repositorio de Objetos Virtuales de Aprendizaje Accesible</h1>  <!-- Titulo-->
+    </div>
     <br>
     <h2>¡Bienvenido!</h2>  <!-- Subtitulo-->
     <!-- Texto-->
@@ -18,6 +18,7 @@
         </video>
     </div>
 <br><br>
+<h3>Descripción</h3>
 <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> 
 Paso 1:
 Seleccionar el botón registrarse.

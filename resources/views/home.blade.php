@@ -2,9 +2,9 @@
 
 @section('title', 'Inicio')
 @section('content')
-    <center>
+    <div align="center">
         <h1>Repositorio de Objetos Virtuales de Aprendizaje Accesible</h1>   <!-- Titulo-->
-    </center>
+    </div>
     <br>
     <h2>¡Bienvenido!</h2><!--Subtitulo -->
     <!-- Texto-->

@@ -1,6 +1,6 @@
 ﻿@extends('layouts.app')
 
-@section('title', 'Iniciar sesion')
+@section('title', 'Iniciar sesión')
 @section('content')
                     <br><br>
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
@@ -39,9 +39,8 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Recuérdame
-                                    </label>
+                                    <input type="checkbox" name="remember" id="remember"> 
+                                    <label for="remember">Recuérdame</label>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +49,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <!-- Boton para iniciar sesion-->
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i>Iniciar sesión    
+                                    <span class="fa fa-btn fa-sign-in"></span>Iniciar sesión    
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">¿Olvidaste tu contraseña?</a>                            </div>

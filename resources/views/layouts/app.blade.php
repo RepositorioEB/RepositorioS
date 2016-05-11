@@ -1,17 +1,14 @@
-<!DOCTYPE html>
+<!DOCTYPE html> center
 <html lang="es">
 <head>
+    <!-- Inicio Modificado (ed) -->
+    <title>@yield('title', 'Inicio')</title>
+    <!-- Fin Modificado (ed) -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!--<title>Repositorio</title>-->
-
-    <!-- Inicio Modificado (ed) -->
-    <title>@yield('title', 'Inicio')</title>
-    <!-- Fin Modificado (ed) -->
-
-
     
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
@@ -106,7 +103,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <div class="panel-title">
-                                    <center><b> Herramientas</b></center>
+                                    <div align="center">Herramientas</div> 
                                 </div>
                             </div>
                             <div class="panel-body">
@@ -117,6 +114,7 @@
                                     {!! Form::text('search', null, ['id' => 'search','class' => 'form-control', 'placeholder' => 'Buscar','required', 'aria-describedby' => 'search']) !!}
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
                                     </div>
+                                    <button type="submit" class = "btn btn-primary navbar-form pull-right">Buscar</button>
                                 {!! Form::close() !!}
     
                                 <br><br><br><br>
@@ -148,12 +146,12 @@
                                         <li>&nbsp;&nbsp;&nbsp;<a href="{{ url('problematica') }}" title="Acerca d"> - Problemática</a></li>
                                 </ul>
                                 <br>
-                                <center>
+                                <div align="center">
                                     <!-- Enlaces para chat, foros y ovas-->
                                     <a href="{{ route('chat.users_chats.index') }}" title="Chatear" class="btn btn-success">¡Chat!</a>
                                     <a href="{{ route('foro.foros_usuarios.index') }}" title="Foros" class="btn btn-success">¡Foros!</a>
                                     <a href="{{ route('ovas.menu')}}" title="Ovas" class="btn btn-success" >¡Ovas!</a>
-                                </center>
+                                </div>
                                 @if (Auth::guest())   <!-- Condicion inicio de sesion-->
                                 @else
                                 <noscript>
@@ -229,7 +227,7 @@
     <!-- Fin Modificado (ed) -->
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=" glyphicon glyphicon-menu-right" aria-hidden="true"> </span> Creado por Braian Estiven Alvarado Rodriguez y Edison Andres Quijano Suarez</h4>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=" glyphicon glyphicon-menu-right" aria-hidden="true"> </span> Creado por Braian Estiven Alvarado Rodriguez y Edison Andres Quijano Suarez
         </div>
     </div>
 </body>

@@ -30,7 +30,7 @@
 	{!! Form::close()!!}
 	</center>
 	{!! Form::open(['route' => 'chat.users_chats.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}   <!-- Formulario para traer los usuarios registrados-->
-			<label for="name">Buscar usuario: &nbsp;&nbsp;  </label>
+			<label for="username">Buscar usuario: &nbsp;&nbsp;  </label>
 			<div class="input-group">
 				{!! Form::text('username', null, ['id'=>'username','title'=>'Ingresar usuario','class' => 'form-control', 'placeholder' => 'Ingresar usuario', 'aria-describedby' => 'search']) !!} <!-- Campo para buscar usuario-->
 				<span class="input-group-addon" id="search">

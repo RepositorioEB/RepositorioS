@@ -165,7 +165,7 @@
 	<noscript>
             <div class="col-md-6 col-md-offset-4">        
             <button type='submit' title='Boton registro' class='btn btn-primary'>
-                <i class='fa fa-btn fa-user'></i>Registrar
+                <span class='fa fa-btn fa-user'></span>Registrar
             </button>
             </div>
 	    <br><br>Al dar Click en el botón registro, se le enviará una contraseña a su correo con la que podrá ingresar al repositorio y cambiarla si lo desea. 

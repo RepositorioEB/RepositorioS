@@ -5,7 +5,7 @@
 @section('content')
 	<div class="table-responsive">
 		@if (\Auth::user()->role == 'admin')   <!-- Condicion si es administrador-->
-            <a href="{{ route('admin.forums.create') }}" class="btn btn-info">Crear nuevo foro admin</a>
+            <a href="{{ route('admin.forums.create') }}" class="btn btn-info">Crear nuevo foro</a>
         @else
             <a href="{{ route('member.forums.create') }}" class="btn btn-info">Crear nuevo foro</a>
         @endif
