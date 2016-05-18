@@ -69,10 +69,11 @@ class OvaController extends Controller
                 $sum = $sum + $ova_evaluation->punctuation;
             }
             if($cont==0){
-                $cont=1;
+                $res=0;
+            }else{
+                $res =$sum / $cont; 
             }
-            $res =$sum / $cont; 
-            $ova->punctuation = round($res,2);
+            $ova->punctuation = round($res,2).'/'.$cont;
         }
         $ovas->each(function($ovas){
             $ovas->type;

@@ -25,8 +25,12 @@
 			</thead>
 			<tbody>
 				<?php
-					$cont = 1;          //Contador
+					$cont = 1;
+					if(isset($_GET['page'])){
+						$cont = $cont + ($helps->PerPage()*($_GET['page']-1));
+					}
 				?>
+				
 				@foreach($helps as $help)   <!-- Ciclo de ayudas-->
 					<tr>
 						<td>{!! $cont++; !!}</td>            <!-- Contador-->
@@ -41,7 +45,11 @@
 			</tbody>	
 		</table>
 	<div class="text-center">
-		{!! $helps->render() !!}   <!-- Paginacion de las ayudas-->
+		@if(isset($_GET['name']))
+			{!! $helps->appends(array('name' => $_GET['name']))->links()!!}   <!-- Paginacion ovas-->
+		@else
+			{!! $helps->render() !!}               <!-- Paginacion de ayuda-->
+		@endif
 	</div>
 	@else
 		<br><br>

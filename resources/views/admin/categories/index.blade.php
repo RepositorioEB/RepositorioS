@@ -16,9 +16,13 @@
 				<th>Acción</th>
 			</thead>
 			<tbody>    <!-- Cuerpo de la tabla-->
-				<?php        
-					$cont = 1;     //Contador
+				<?php
+					$cont = 1;
+					if(isset($_GET['page'])){
+						$cont = $cont + ($categories->PerPage()*($_GET['page']-1));
+					}
 				?>
+				
 				@foreach($categories as $category)            <!-- Ciclo de categorias-->
 					<tr>     <!-- Fila de la tabla-->
 						<td>{!! $cont++; !!}</td>     <!-- Mostrar contador en la celda-->

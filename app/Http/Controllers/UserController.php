@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserAdminRequest;
 use App\Http\Requests\User1Request;
 use Laracasts\Flash\Flash;
+use Mail;
+use Session;
 use App\User;
 use App\Profile;
 use App\Country;
@@ -48,7 +51,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserRequest $request)
+    public function store(UserAdminRequest $request)
     {
         $dates = explode("-", $request->date);
         $date = Carbon::createFromDate($dates[0],$dates[1],$dates[2])->age;

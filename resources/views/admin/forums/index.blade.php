@@ -27,8 +27,12 @@
 			</thead>
 			<tbody>             <!-- Cuerpo de tabla-->
 				<?php
-					$cont = 1;          //Contador
+					$cont = 1;
+					if(isset($_GET['page'])){
+						$cont = $cont + ($forums->PerPage()*($_GET['page']-1));
+					}
 				?>
+				
 				@foreach($forums as $forum)           <!-- Ciclo para foros-->
 					<tr>
 						<td>{!! $cont++; !!}</td>        <!-- Contador-->
@@ -44,7 +48,11 @@
 			</tbody>	
 		</table>
 	<div class="text-center">
-		{!! $forums->render() !!}             <!-- Paginacion de foros-->
+		@if(isset($_GET['name']))
+			{!! $forums->appends(array('name' => $_GET['name']))->links()!!}   <!-- Paginacion ovas-->
+		@else
+			{!! $forums->render() !!}             <!-- Paginacion de foros-->
+		@endif
 	</div>
 	@else
 		<br><br><br><br>

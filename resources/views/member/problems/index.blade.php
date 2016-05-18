@@ -56,7 +56,11 @@
 			</tbody>	
 		</table>
 		<div class="text-center">
-			{!! $problems->render() !!}       <!-- Paginacion de los problemas-->
+		@if(isset($_GET['name']))
+			{!! $problems->appends(array('name' => $_GET['name']))->links()!!}   <!-- Paginacion ovas-->
+		@else
+			{!! $problems->render() !!}               <!-- Paginacion de ayuda-->
+		@endif
 		</div>
 		@else
 			<br><br>

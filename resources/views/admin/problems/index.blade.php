@@ -30,7 +30,11 @@
 			<tbody>
 				<?php
 					$cont = 1;
+					if(isset($_GET['page'])){
+						$cont = $cont + ($problems->PerPage()*($_GET['page']-1));
+					}
 				?>
+				
 				@foreach($problems as $problem)    <!-- Ciclo de problemas-->
 					<tr>
 						<td>{!! $cont++; !!}</td>
@@ -56,7 +60,11 @@
 			</tbody>	
 		</table>
 		<div class="text-center">
-			{!! $problems->render() !!}       <!-- Paginacion problema-->
+		@if(isset($_GET['name']))
+			{!! $problems->appends(array('name' => $_GET['name']))->links()!!}   <!-- Paginacion ovas-->
+		@else
+			{!! $problems->render() !!}               <!-- Paginacion de ayuda-->
+		@endif
 		</div>
 		@else
 			<br><br><br>

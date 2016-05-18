@@ -18,7 +18,7 @@ class AddOvasTable extends Migration
             $table->string('language',2)->default('es')->nullable();
             $table->text('description')->nullable();
             $table->string('archive');
-            $table->integer('punctuation')->nullable();
+            $table->string('punctuation')->nullable();
             $table->boolean('state')->default(false);
             $table->integer('type_id')->unsigned()->nullable();
             $table->integer('category_id')->unsigned()->nullable();

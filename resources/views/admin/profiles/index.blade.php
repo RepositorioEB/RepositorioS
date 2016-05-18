@@ -18,6 +18,9 @@
 			<tbody>
 				<?php
 					$cont = 1;
+					if(isset($_GET['page'])){
+						$cont = $cont + ($profiles->PerPage()*($_GET['page']-1));
+					}
 				?>
 				@foreach($profiles as $profile)   <!-- Ciclo perfiles-->
 					<tr>

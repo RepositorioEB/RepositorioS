@@ -34,12 +34,16 @@
 			<tbody>
 				<?php
 					$cont = 1;
+					if(isset($_GET['page'])){
+						$cont = $cont + ($ovas->PerPage()*($_GET['page']-1));
+					}
 				?>
+				
 				@foreach($ovas as $ova)     <!-- Ciclo ovas-->
 					<tr>
 						<td>{!! $cont++; !!}</td>
 						<td>{{ $ova->name }}</td>
-						<td>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $ova->punctuation}}</td>    <!--Mostrar puntuacion del ova -->
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-stats" aria-hidden="true"> </span>  {{ $ova->punctuation}}</td>    <!--Mostrar puntuacion del ova -->
 						<td>{{ $ova->type->name }}</td>
 						<td>{{ $ova->category->name }}</td>
 						<td>

@@ -18,6 +18,9 @@
 			<tbody>
 				<?php
 					$cont = 1;
+					if(isset($_GET['page'])){
+						$cont = $cont + ($types->PerPage()*($_GET['page']-1));
+					}
 				?>
 				@foreach($types as $type)  <!-- Ciclo de tipos de ova-->
 					<tr>

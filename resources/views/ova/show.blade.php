@@ -10,14 +10,6 @@
 	
 	<center><legend><h2>DATOS COMPLETOS DEL OVA</h2></legend></center>
 	<div class="form-group">
-		<h3>{!! Form::label('id','Identificación: ',["class"=>"label label-primary"]) !!}
-			<br><br>
-			<center>
-				{!! Form::text('id', $ova->id, ['class' => 'form-control','readonly'=>'readonly']) !!}
-			</center>	
-		</h3>
-	</div>
-	<div class="form-group">
 		<h3>{!! Form::label('name','Nombre: ',["class"=>"label label-primary"]) !!}
 			<br><br>
 			<center>

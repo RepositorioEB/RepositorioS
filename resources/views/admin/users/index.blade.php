@@ -30,6 +30,9 @@
 			<tbody>
 				<?php
 					$cont = 1;
+					if(isset($_GET['page'])){
+						$cont = $cont + ($users->PerPage()*($_GET['page']-1));
+					}
 				?>
 				@foreach($users as $user)   <!-- Ciclo para los usuarios-->
 					<tr>
@@ -57,7 +60,11 @@
 			</tbody>	
 		</table>
 		<div class="text-center">
+		@if(isset($_GET['name']))
+			{!! $users->appends(array('name' => $_GET['name']))->links()!!}   <!-- Paginacion ovas-->
+		@else
 			{!! $users->render() !!}    <!-- Paginacion usuarios-->
+		@endif
 		</div>
 	@else
 		<br><br><br><br>

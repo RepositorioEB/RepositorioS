@@ -60,7 +60,7 @@ class AuthController extends Controller
             'name' => 'min:4|required|max:255|alpha',
             'username' => 'min:4|required|max:255|alpha_num|unique:users',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:8|confirmed',
             'gender' => 'required',
             'date' => 'required|date|after:'.$fecha1.'|before:'.$fecha2.'',
             'country' => 'required',

@@ -47,7 +47,11 @@
 			</tbody>	
 		</table>
 		<div class="text-center">
-			{!! $forums->render() !!}   <!-- Paginacion fora-->
+		@if(isset($_GET['name']))
+			{!! $forums->appends(array('name' => $_GET['name']))->links()!!}   <!-- Paginacion ovas-->
+		@else
+			{!! $forums->render() !!}               <!-- Paginacion de ayuda-->
+		@endif
 		</div>
 		@else
 			<br><br><br><br>

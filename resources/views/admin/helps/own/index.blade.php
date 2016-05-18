@@ -27,8 +27,12 @@
 			</thead>
 			<tbody>         <!-- Cuerpo tabla-->
 				<?php
-					$cont = 1;          //Contador
+					$cont = 1;
+					if(isset($_GET['page'])){
+						$cont = $cont + ($helps->PerPage()*($_GET['page']-1));
+					}
 				?>
+				
 				@foreach($helps as $help)              <!-- Ciclo de ayudas-->
 					@if($help->user_id == Auth::user()->id)          <!-- Comparacion con la identificacion del usuario-->
 					<tr>

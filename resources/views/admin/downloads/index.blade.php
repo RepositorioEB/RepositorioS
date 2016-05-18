@@ -17,8 +17,12 @@
 			</thead>
 			<tbody>                            <!-- Cuerpo tabla-->
 				<?php
-					$cont = 1;           //contador
+					$cont = 1;
+					if(isset($_GET['page'])){
+						$cont = $cont + ($downloads->PerPage()*($_GET['page']-1));
+					}
 				?>
+				
 				@foreach($downloads as $download)      <!-- Inicio de ciclodescargas-->
 					<tr>
 						<td>{!! $cont++; !!}</td>            <!-- Contador-->

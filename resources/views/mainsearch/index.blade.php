@@ -5,7 +5,56 @@
 @section('content')
 	<?php
 		$var = 0;
-		$varTotal = 0;	
+		$varTotal = 0;
+		$mayor=0;
+		if ($ovasname->Total()>$mayor) {
+			$mayor=$ovasname->Total();
+			$busqueda=$ovasname;
+		}
+		if ($ovasarchive->Total()>$mayor) {
+			$mayor=$ovasarchive->Total();
+			$busqueda=$ovasarchive;
+		}
+		if ($ovascategory->Total()>$mayor) {
+			$mayor=$ovascategory->Total();
+			$busqueda=$ovascategory;
+		}
+		if ($ovastype->Total()>$mayor) {
+			$mayor=$ovastype->Total();
+			$busqueda=$ovastype;
+		}
+		if ($categoriesdescription->Total()>$mayor) {
+			$mayor=$categoriesdescription->Total();
+			$busqueda=$categoriesdescription;
+		}
+		if ($typesdescription->Total()>$mayor) {
+			$mayor=$typesdescription->Total();
+			$busqueda=$typesdescription;
+		}
+		if ($forumsname->Total()>$mayor) {
+			$mayor=$forumsname->Total();
+			$busqueda=$forumsname;
+		}
+		if ($helpsname->Total()>$mayor) {
+			$mayor=$helpsname->Total();
+			$busqueda=$helpsname;
+		}
+		if ($helpsvideo->Total()>$mayor) {
+			$mayor=$helpsvideo->Total();
+			$busqueda=$helpsvideo;
+		}
+		if ($helpsdescription->Total()>$mayor) {
+			$mayor=$helpsdescription->Total();
+			$busqueda=$helpsdescription;
+		}
+		if ($forumscharacteristic->Total()>$mayor) {
+			$mayor=$forumscharacteristic->Total();
+			$busqueda=$forumscharacteristic;
+		}
+		if ($ovasdescription->Total()>$mayor) {
+			$mayor=$ovasdescription->Total();
+			$busqueda=$ovasdescription;
+		}
 	?>
 	@foreach($ovasname as $ovaname)  <!-- Ciclo nombreova-->
 		@if($ovaname->state ==1)<!-- Condicion si el ova ya has sido subido-->
@@ -403,8 +452,8 @@
 	</div>
 	@endif
 	<div class="text-center">
-	    {!! $ovasdescription->appends(array('search' => $_GET['search']))->links()!!}  <!--Realizar la paginacion -->
-    </div>
+	    {!! $busqueda->appends(array('search' => $_GET['search']))->links()!!}  <!--Realizar la paginacion -->
+    </div>	
     @if($varTotal == 0)
     	<h3><legend>&nbsp;&nbsp;&nbsp;No se encontró ningún elemento.</legend></h3>		
 	@endif
