@@ -74,8 +74,7 @@
 	        <div class="panel panel-default">
 	            <div class="panel-heading">Tus ovas</div>
 	            <div class="panel-body">
-	            	@if($i)
-	            		<!-- Formulario para raer ovas de usuario-->
+	            	<!-- Formulario para raer ovas de usuario-->
 						{!! Form::open(['route' => 'cuenta.user.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}
 							<label for="sel1" class="control-label">Buscar por:</label>
 							<select class="form-control" id="sel1" name="select">
@@ -89,6 +88,7 @@
 								<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
 							</div>
 						{!! Form::close() !!}
+	            	@if($i)
 		            	<table class="table table-striped">
 							<thead>
 								<th>Nombre</th>
@@ -113,8 +113,16 @@
 								@endforeach
 							</tbody>	
 						</table>
+						<div class="text-center">
+						@if(isset($_GET['select']))
+							{!! $ovas->appends(array('select' => $_GET['select'],'name' => $_GET['name']))->links()!!}   <!-- Paginacion de ovas con parametros-->
+						@else
+							{!! $ovas->render() !!}   <!-- Paginacion de ovas-->
+						@endif
+						</div>
 					@else
-						{{ 'Ud no ha subido ningun ova a este repositorio' }}
+					<br><br><br><br>
+					<h3><legend>&nbsp;&nbsp;&nbsp;No se encontró ningún elemento.</legend></h3>
 					@endif
 	            </div>
 	        </div>
@@ -122,8 +130,7 @@
 	        <div class="panel panel-default">
 	            <div class="panel-heading">Tus foros</div>
 	            <div class="panel-body">
-	            	@if($j)
-	            		<!-- Formulario para traer foros de usuario-->
+	            	<!-- Formulario para traer foros de usuario-->
 						{!! Form::open(['route' => 'cuenta.user.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}
 							{!! Form::label('nameForo','Ingrese el nombre del foro:') !!}
 							<div class="input-group">
@@ -131,7 +138,8 @@
 								<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
 							</div>
 						{!! Form::close() !!}
-						<table class="table table-striped">
+						@if($j)
+	            		<table class="table table-striped">
 							<thead>
 								<th>Nombre</th>
 								<th>Caracteristicas</th>
@@ -147,8 +155,16 @@
 								@endforeach
 							</tbody>	
 						</table>
+						<div class="text-center">
+						@if(isset($_GET['nameForo']))
+							{!! $forums->appends(array('nameForo' => $_GET['nameForo']))->links()!!}   <!-- Paginacion ovas-->
+						@else
+							{!! $forums->render() !!}               <!-- Paginacion de ayuda-->
+						@endif
+						</div>
 					@else
-						{{ 'Ud no ha creado ningun foro en este repositorio' }}
+					<br><br><br><br>
+					<h3><legend>&nbsp;&nbsp;&nbsp;No se encontró ningún elemento.</legend></h3>
 					@endif
 	            </div>
 	        </div>

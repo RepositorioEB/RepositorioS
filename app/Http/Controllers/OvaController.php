@@ -37,7 +37,7 @@ class OvaController extends Controller
     
     public function index(Request $request)
     {
-        if($request->name){
+        if($request->name){ 
             if(($request->select)=='Nombre'){
                 $ovas = Ova::Search($request->name)->orderBy('id','ASC')->first();
                 $ovas = Ova::Search($request->name)->orderBy('id','ASC')->paginate(20);

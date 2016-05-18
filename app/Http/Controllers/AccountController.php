@@ -37,38 +37,33 @@ class AccountController extends Controller
         }
         /*Cargar la lista de perfiles, ovas y foros*/
         $profiles = Profile::orderBy('name', 'ASC')->lists('name', 'id');
-        $ovas = Ova::orderBy('id','ASC')->paginate(10);
-        $forums = Forum::orderBy('id','ASC')->get();
+        if($request->nameForo){ 
+            $forums = Forum::SearchForum($request->nameForo)->orderBy('id','ASC')->where('user_id',$user->id)->paginate(20);    
+        }else{
+            $forums = Forum::orderBy('id','ASC')->where('user_id',$user->id)->paginate(20);
+        }
+
         /* Esta parte nos permite realizar busquedas tanto por el nombre, como por el tipo y la categoria */
-        if($request->name){
+        if($request->name){ 
             if(($request->select)=='Nombre'){
-                /*La funcion Search nos permite buscar en la lista ova, el nombre que le pasamos desde el campo busqueda*/
                 $ovas = Ova::Search($request->name)->orderBy('id','ASC')->first();
-                if($ovas){
-                    $ovas = Ova::Search($request->name)->orderBy('id','ASC')->paginate(20);
-                }else{
-                    $ovas = Ova::orderBy('id','ASC')->paginate(20);
-                }
+                $ovas = Ova::Search($request->name)->where('user_id',$user->id)->orderBy('id','ASC')->paginate(20);
             }else{
                 if(($request->select)=='Tipo'){
                     $type = Type::SearchType($request->name)->select('id')->orderBy('id','ASC')->get();
                     if($type){
-                        $ovas = Ova::whereIn('type_id',$type)->orderBy('id','ASC')->paginate(20);  
-                    }else{
-                        $ovas = Ova::orderBy('id','ASC')->paginate(20);
+                        $ovas = Ova::whereIn('type_id',$type)->where('user_id',$user->id)->orderBy('id','ASC')->paginate(20);  
                     }
                 }else{
                     $category = Category::SearchCategory($request->name)->select('id')->orderBy('id','ASC')->get();
                     if($category){
-                        $ovas = Ova::whereIn('category_id', $category)->orderBy('id','ASC')->paginate(20);
-                    }else{
-                        $ovas = Ova::orderBy('id','ASC')->paginate(20);
+                        $ovas = Ova::whereIn('category_id', $category)->where('user_id',$user->id)->orderBy('id','ASC')->paginate(20);
                     }
                 }
 
             }
         }else{
-             $ovas = Ova::Search($request->nameOva)->orderBy('id','ASC')->paginate(20);
+             $ovas = Ova::Search($request->nameOva)->where('user_id',$user->id)->orderBy('id','ASC')->paginate(20);
         }
         /* Este ciclo nos permite asignar los valores correspondientes para realizar la evaluacion
          del ova. Se busca en la tabla ovas_evaluations cuando sea ova_id*/
@@ -83,10 +78,11 @@ class AccountController extends Controller
                 $sum = $sum + $ova_evaluation->punctuation;
             }
             if($cont==0){
-                $cont=1;
+                $res=0;
+            }else{
+                $res =$sum / $cont; 
             }
-            $res =$sum / $cont; 
-            $ova->punctuation =$res;
+            $ova->punctuation = round($res,2).'/'.$cont;
         }
         /* En este ciclo asignamos los campos correspondientes
         utilizando las relaciones dadas en las funciones del archivo model ova */
