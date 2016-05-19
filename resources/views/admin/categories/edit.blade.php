@@ -6,6 +6,9 @@
 	
 	@include('admin.template.partials.errors')      <!-- Revisar errores ventana-->
 	{!! Form::model($categories, ['route' => ['admin.categories.update',$categories->id],'method' => 'PUT']) !!}   <!-- Abrir formulario para enviar al controlador de moodificacion-->
+		<br>
+		<h3>Ingrese los datos que desea modificar:</h3> 
+		<br>
 		@include('admin.template.partials.fieldscategory')     <!-- Traer campos de categoria-->
 		<div class="form-group">   <!--Estructura de formulario -->
 			<center>

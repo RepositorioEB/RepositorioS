@@ -8,6 +8,9 @@
 	<div class="table-responsive">
 		<a href="{{ route('admin.profiles.create') }}" class="btn btn-info">Registrar nueva discapacidad</a>   <!-- Enlace registrar nuevo perfil-->
 		@if(count($profiles)>0)
+		<br><br>
+		<h3>Las discapacidades que se encontraron fueron las siguientes:</h3> 
+		<br>
 		<table class="table table-striped">
 			<thead>
 				<th>N°</th>

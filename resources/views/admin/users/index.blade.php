@@ -16,7 +16,11 @@
 				</span>
 			</div>
 		{!! Form::close() !!}
+			
 		@if(count($users)>0)
+		<br><br>
+		<h3>Los usuarios que se encontraron fueron los siguientes:</h3> 
+		<br>
 		<table class="table table-striped">
 			<thead>
 				<th>Nº</th>

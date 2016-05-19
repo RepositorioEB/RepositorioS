@@ -6,6 +6,10 @@
 
 	@include('admin.template.partials.errors')
 	{!! Form::open(['route' => 'member.forums.store','method' => 'POST']) !!}  <!--Formulario para ingresar un nuevo foro -->
+		<br>
+		<h3>Ingrese los datos del nuevo foro:</h3> 
+		<br>
+	
 		@include('member.template.partials.fieldsforum')   <!-- Traer campos de foro-->
 		<center>
 		<div class="form-group">

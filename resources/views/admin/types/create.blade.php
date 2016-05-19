@@ -6,6 +6,9 @@
 
 	@include('admin.template.partials.errors')
 	{!! Form::open(['route' => 'admin.types.store','method' => 'POST']) !!}   <!-- Formulario para registrar nuevo tipo de ova-->
+		<br>
+		<h3>Ingrese los datos del nuevo tipo de OVAS:</h3> 
+		<br>
 		@include('admin.template.partials.fieldstype')
 		<div class="form-group">
 			<center>

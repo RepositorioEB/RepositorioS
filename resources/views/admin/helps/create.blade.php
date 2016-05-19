@@ -6,6 +6,9 @@
 
 	@include('admin.template.partials.errors')                <!-- Revisar errores ventana-->
 	{!! Form::open(['route' => 'admin.helps.store','method' => 'POST', 'files' => true]) !!}           <!-- Formulario para la creacion de la ayuda-->
+		<br>
+		<h3>Ingrese los datos de la nueva ayuda:</h3> 
+		<br>
 		@include('admin.template.partials.fieldshelp')    <!-- Traer campos de ayuda-->
 		<div class="form-group">    <!-- Estructura formulario-->
 			<center>

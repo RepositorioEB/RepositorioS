@@ -19,6 +19,8 @@
 		@endif
 	@endforeach
 	@if($i==1)
+		<h3>Los OVAS propios que se encontraron fueron los siguientes:</h3> 
+		<br>
 		<table class="table table-striped">
 		<thead>
 			<th>Nombre</th>

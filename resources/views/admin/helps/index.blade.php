@@ -18,6 +18,8 @@
 	{!! Form::close() !!}     <!-- Fin de ciclo-->
 	<br><br><br>
 		@if(count($helps)>0)
+		<h3>Las ayudas que se encontraron fueron las siguientes:</h3> 
+		<br>
 		<table class="table table-striped">         <!-- Tabla con estilo-->
 			<thead>        <!-- Cabeza tabla-->
 				<th>Nº</th>               <!-- Nombre columna-->

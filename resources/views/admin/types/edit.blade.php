@@ -6,6 +6,9 @@
 	
 	@include('admin.template.partials.errors')
 	{!! Form::model($types, ['route' => ['admin.types.update',$types->id],'method' => 'PUT']) !!}   <!-- Formulario para modificar los tipos de ovas-->
+		<br>
+		<h3>Ingrese los datos que desea modificar:</h3> 
+		<br>
 		@include('admin.template.partials.fieldstype')   <!-- Traer los campo de tipos de ovas-->
 		<div class="form-group">
 			<center>

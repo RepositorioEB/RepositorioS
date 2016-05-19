@@ -18,6 +18,8 @@
 			@endif    <!-- Fin de condicional-->
 		@endforeach     <!-- Fin ciclo-->
 		@if($i==1)
+		<h3>Los foros propios que se encontraron fueron los siguientes:</h3> 
+		<br>
 		<table class="table table-striped">              <!-- Tabla con estilo-->
 			<thead>  <!-- Cabeza de la tabla-->
 				<th>Nombre</th>        <!-- Nombre columna-->

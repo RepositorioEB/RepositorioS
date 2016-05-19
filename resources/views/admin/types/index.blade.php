@@ -8,9 +8,12 @@
 	<div class="table-responsive">
 		<a href="{{ route('admin.types.create') }}" class="btn btn-info">Registrar nuevo tipo</a>  <!-- Enlace registrar nuevo tipo de ova-->
 		@if(count($types)>0)
+		<br><br>
+		<h3>Los tipos de OVAS que se encontraron fueron los siguientes:</h3> 
+		<br>
 		<table class="table table-striped">
 			<thead>
-				<th>N°</th>
+				<th>Nº</th>
 				<th>Nombre</th>
 				<th>Descripción</th>
 				<th>Acción</th>

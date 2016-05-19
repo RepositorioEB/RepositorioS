@@ -6,6 +6,10 @@
 
 	@include('admin.template.partials.errors')    <!-- Revisar errores ventana-->
 	{!! Form::open(['route' => 'admin.categories.store','method' => 'POST']) !!}  <!-- Abrir formulario para la creacion de categoria-->
+		<br>
+		<h3>Ingrese los datos de la nueva categoría de OVAS:</h3> 
+		<br>
+	
 		@include('admin.template.partials.fieldscategory')   <!-- Añadir a la ventana los campos-->
 		<div class="form-group">   <!-- Estructura de formulario-->
 			<center>

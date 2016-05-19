@@ -6,10 +6,12 @@
 	
 	<section>
 		<div>
-			<header><center><h1><b>{{ 'Solucion para el problema: '.$problem->name }}</b></h1></header></center>
+			<header><center><h2><b>{{ 'Solucion para el problema: '.$problem->name }}</b></h2></header></center>
 			<article>
-				<p><b>Descripcion de la solucion:</b></p>
-				<p>{!! $replace=str_replace("\r","<br>",$problem->solution); !!}</p>  <!-- Descripcion de la ayuda-->
+				<div class="form-group">
+					<h3>{!! Form::label('description','Descripcion de la solucion:',["class"=>"label label-primary"]) !!}</h3>
+					{!! Form::textarea('description', $replace=str_replace("\r","<br>",$problem->solution), ['class' => 'form-control','placeholder' => 'Descripción del OVA (Minimo 20 caracteres)']) !!}
+				</div>
 			</article>
 		</div>
 	</section>

@@ -21,6 +21,9 @@
 			</div>
 		{!! Form::close() !!}
 		@if(count($forums)>0)
+		<br><br>
+		<h3>Los foros que se encontraron fueron los siguientes:</h3> 
+		<br>
 		<table class="table table-striped ">
 			<thead>
 				<th>Nombre</th>

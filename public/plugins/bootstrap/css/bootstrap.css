@@ -5,7 +5,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;       navbar-default .navbar-brand
+  font-family: sans-serif;       c53531
   -webkit-text-size-adjust: 100%;
 }
 body { 
@@ -3345,7 +3345,7 @@ fieldset[disabled] .btn-warning.focus {
 }
 .btn-danger {
   color: #fff;
-  background-color: #d9534f;
+  background-color: #c53531;
   border-color: #d43f3a;
 }
 .btn-danger:focus,

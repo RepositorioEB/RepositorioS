@@ -8,6 +8,9 @@
 	<div class="table-responsive">
 	<center>
 		@if(count($forums)>0)
+		<br><br>
+		<h3>Los foros más recientes son los siguientes:</h3> 
+		<br>
 		<table>
 		<thead>
 			<th><h4><legend>Nombre</legend></h4></th>

@@ -7,6 +7,9 @@
 	@include('admin.template.partials.errors')                   <!-- Revisar errores ventana-->
 	<div class="table-responsive">                  <!-- Clase para adaptacion movil-->
 		@if(count($downloads)>0)
+		<br><br>
+		<h3>Las descargas que se encontraron fueron las siguientes:</h3> 
+		<br>
 		<table class="table table-striped">                  <!-- Tabla con estilo-->
 			<thead>                 <!-- Cabeza tabla-->
 				<th>N°</th>               <!-- Nombre columna tabla-->

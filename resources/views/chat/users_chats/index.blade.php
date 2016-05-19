@@ -58,7 +58,11 @@
 		</tbody>	
 	</table>
 	<div class="text-center">
-		{!! $users->render() !!} <!--Paginacion de usuarios -->
+		@if(isset($_GET['username']))
+			{!! $users->appends(array('username' => $_GET['username']))->links()!!}   <!-- Paginacion ovas-->
+		@else
+			{!! $users->render() !!}               <!-- Paginacion de usuarios-->
+		@endif
 	</div>
 	
 @endsection

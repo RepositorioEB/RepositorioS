@@ -105,7 +105,7 @@ class DownloadController extends Controller
     {
         $download = Download::find($id);
         $download->delete();
-        Flash::error('La descarga ' .$download->id. ' ha sido borrado con exito!');
+        Flash::error('La descarga ha sido borrada con exito!');
         return redirect()->route('admin.downloads.index');
     }
 }

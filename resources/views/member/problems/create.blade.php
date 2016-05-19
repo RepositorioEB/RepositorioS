@@ -6,6 +6,9 @@
 
 	@include('admin.template.partials.errors')
 	{!! Form::open(['route' => 'member.problems.store','method' => 'POST']) !!} <!-- Formuario para crear un nuevo problema-->
+		<br>
+		<h3>Ingrese los datos del nuevo problema:</h3> 
+		<br>
 		<div class="form-group">
 		<h3>{!! Form::label('name','Nombre',['class'=>'label label-primary']) !!}</h3> 
 			{!! Form::text('name', null, ['class' => 'form-control','placeholder' => 'Nombre completo (Minimo 5 caracteres)']) !!}   <!-- Campo para ingresar el nombre del problema-->

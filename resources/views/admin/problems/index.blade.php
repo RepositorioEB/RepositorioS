@@ -17,6 +17,9 @@
 			</div>
 		{!! Form::close() !!}
 		@if(count($problems)>0)
+		<br><br>
+		<h3>Los problemas que se encontraron fueron los siguientes:</h3> 
+		<br>
 		<table class="table table-striped">
 			<thead>
 				<th>Nº</th>

@@ -6,7 +6,7 @@
 
 	@include('admin.template.partials.errors')
 		<a href="{{ route('admin.ovas.create') }}" class="btn btn-info">Registrar nuevo ova</a>   <!-- Enlace registrar nuevo ova-->
-		<br><br>
+		<br>
 		{!! Form::open(['route' => 'admin.ovas.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}   <!-- Formulario para seleccionar ova -->
 		<label for="sel1">Seleccionar tipo de búsqueda:</label>  
 		<select class="form-control" id="sel1" name="select">   <!-- Seleccionador para buscar ova por nombre tipo o categoria-->
@@ -21,7 +21,10 @@
 		</div>
 		{!! Form::close() !!}
 	@if(count($ovas)>0)
-	<table class="table table-striped">
+		<br><br><br>
+		<h3>Los OVAS que se encontraron fueron los siguientes:</h3> 
+		<br>
+		<table class="table table-striped">
 			<thead>
 				<th>N°</th>
 				<th>Nombre</th>

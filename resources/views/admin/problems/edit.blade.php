@@ -6,6 +6,9 @@
 	
 	@include('admin.template.partials.errors')
 	{!! Form::model($problems, ['route' => ['admin.problems.update',$problems->id],'method' => 'PUT']) !!}     <!-- Formulario para modificar el problema-->
+		<br>
+		<h3>Ingrese los datos que desea modificar:</h3> 
+		<br>
 		@include('admin.template.partials.fieldsproblem') <!-- Traer capor de problemas-->
 		<div class="form-group">
 			<center>

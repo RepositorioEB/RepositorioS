@@ -24,7 +24,9 @@
 	{!! Form::close() !!}
 	<br><br><br><br><br>
 	@if(count($ovas)>0)
-	<table class="table table-striped">
+		
+		<h3>Los OVAS que se encontraron fueron los siguientes:</h3> 
+		<br><table class="table table-striped">
 		<thead>
 			<th>Nombre</th>
 			<th>Tipo</th>

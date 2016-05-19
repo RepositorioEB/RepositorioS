@@ -17,6 +17,9 @@
 			</div>
 		{!! Form::close() !!}               <!-- Fin de formulario-->
 		@if(count($forums)>0)
+		<br><br>
+		<h3>Los foros que se encontraron fueron los siguientes:</h3> 
+		<br>
 		<table class="table table-striped">   <!-- Tabla con estilo-->
 			<thead>               <!-- Cabeza de tabla-->
 				<th>Nº</th>     <!-- Nombre columna-->

@@ -6,6 +6,9 @@
 
 	@include('admin.template.partials.errors')
 	{!! Form::open(['route' => 'admin.problems.store','method' => 'POST']) !!}           <!-- Formulario para registrar nuevo problema-->
+		<br>
+		<h3>Ingrese los datos del nuevo problema:</h3> 
+		<br>
 		@include('admin.template.partials.fieldsproblem')
 		<div class="form-group">
 			<center>

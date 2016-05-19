@@ -8,6 +8,9 @@
 	<div class="table-responsive">
 	<center>
 	@if(count($helps)>0)
+		<br><br>
+		<h3>Las ayudas más recientes son las siguientes:</h3> 
+		<br>
 		<table>
 		<thead>
 			<th><h4><legend>Nombre</legend></h4></th>

@@ -5,9 +5,12 @@
 @section('content')
 	
 	@include('admin.template.partials.errors')
-	<div class="table-responsive">
-	<center>
+	<div class="table-responsive" align ="center">
 	@if(count($ovas)>0)
+		<br><br>
+		<h3>Los OVAS más recientes son los siguientes:</h3> 
+		<br>
+		
 		<table>
 		<thead>
 			<th><h4><legend>Nombre</legend></h4></th>
@@ -27,6 +30,5 @@
 	@else
 		<h3><legend>&nbsp;&nbsp;&nbsp;No se encontró ningún elemento.</legend></h3>			
 	@endif
-	</center>
 	</div>
 @endsection

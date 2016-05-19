@@ -5,6 +5,9 @@
 @section('content')
 	
 	@include('admin.template.partials.errors')
+	<br>
+	<h3>Descargue el OVA si desea revisarlo antes de subirlo al repositorio:</h3> 
+	<br>
 	{!! Form::open( ['route' => ['ovas.downloads.store','ova_id'=>$ovas->id],'method' => 'POST', 'files' => true]) !!}		
 	<div class="form-group">
 		<h3>{!! Form::label('archive','Archivo',["class"=>"label label-primary"]) !!}
@@ -17,6 +20,9 @@
 	{!! Form::close() !!}
 	
 	{!! Form::model($ovas, ['route' => ['admin.ovas.update',$ovas->id],'method' => 'PUT', 'files' => true]) !!}   <!-- Formulario para modificar los ovas-->
+		<br>
+		<h3>Ingrese los datos que desea modificar:</h3> 
+		<br>
 		@include('admin.template.partials.fieldsova', ['routes' => 'edit'])   <!-- Traer campos ova-->
 		<div class="form-group">
 			<h3>{!! Form::label('state','Estado',['class'=>'label label-primary']) !!}</h3>

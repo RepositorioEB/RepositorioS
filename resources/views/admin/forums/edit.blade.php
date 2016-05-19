@@ -6,6 +6,9 @@
 	
 	@include('admin.template.partials.errors')             <!-- Revisar errores ventana-->
 	{!! Form::model($forums, ['route' => ['admin.forums.update',$forums->id],'method' => 'PUT']) !!}          <!-- Inicio de formulario para modificar el foro-->
+		<br>
+		<h3>Ingrese los datos que desea modificar:</h3> 
+		<br>
 		@include('admin.template.partials.fieldsforum')        <!-- Traer los campos de foro-->
 		<div class="form-group">         <!-- Estructura del formulario-->
 			<center>

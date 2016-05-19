@@ -8,6 +8,9 @@
 	<div class="table-responsive">         <!-- Clase para adaptacion a movil-->
 		<a href="{{ route('admin.categories.create') }}" class="btn btn-info">Registrar nueva categoría</a>   <!-- Enlace para ingresar una nueva categoria-->
 		@if(count($categories)>0)
+		<br><br>
+		<h3>Las categorías de OVAS que se encontraron fueron las siguientes:</h3> 
+		<br>
 		<table class="table table-striped">     <!-- Tabla con estilo-->
 			<thead>        <!-- Cabeza de la tabla-->
 				<th>N°</th>      <!-- Titulo columna-->

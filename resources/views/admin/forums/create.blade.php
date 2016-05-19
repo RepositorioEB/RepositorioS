@@ -6,7 +6,10 @@
 
 	@include('admin.template.partials.errors')                            <!-- Revisar errores ventana-->
 	{!! Form::open(['route' => 'admin.forums.store','method' => 'POST']) !!}                     <!-- Inicio de formulario para crear el foro-->
-		@include('admin.template.partials.fieldsforum')               <!-- Traer capos de foro-->
+	<br>
+	<h3>Ingrese los datos del nuevo foro:</h3> 
+	<br>
+	@include('admin.template.partials.fieldsforum')               <!-- Traer capos de foro-->
 		<div class="form-group">        <!-- Estructura del formulario-->
 			<center>
 			{!! Form::submit('Registrar',['class' => 'btn btn-warning']) !!}        <!--Boton para registrar foro -->

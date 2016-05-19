@@ -6,7 +6,7 @@
 	
 	<section>
 		<div>
-			<header><h1>{{ 'Nombre de la ayuda: '.$help->name }}</h1></header> 
+			<header><h2 align="center">{{ 'Nombre de la ayuda: '.$help->name }}</h2></header> 
 			<article>
 				<p>{!! $replace=str_replace("\r","<br>",$help->description); !!}</p>  <!-- Descripcion de la ayuda-->
 			</article>

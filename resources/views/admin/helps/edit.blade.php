@@ -6,6 +6,9 @@
 	
 	@include('admin.template.partials.errors')                      <!-- Revisar errores ventana-->
 	{!! Form::model($helps, ['route' => ['admin.helps.update',$helps->id],'method' => 'PUT', 'files' => true]) !!}          <!-- Inicio de formulario para modificar la ayuda-->
+		<br>
+		<h3>Ingrese los datos que desea modificar:</h3> 
+		<br>
 		@include('admin.template.partials.fieldshelp')    <!-- Traer campos ayuda-->
 		<div class="form-group">   <!-- Estructura de formualrio-->
 			<center>

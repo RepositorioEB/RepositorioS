@@ -18,6 +18,8 @@
 			@endif    <!-- Fin de condicional-->
 		@endforeach     <!-- Fin ciclo-->
 		@if($i==1)
+		<h3>Las ayudas propias que se encontraron fueron las siguientes:</h3> 
+		<br>
 		<table class="table table-striped">           <!-- Table con estilo-->
 			<thead>                  <!-- Cabeza tabla-->
 				<th>Nº</th>               <!-- Nombre columna-->

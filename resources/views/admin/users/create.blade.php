@@ -5,7 +5,9 @@
 @section('content')
 
 	@include('admin.template.partials.errors')
-	
+	<br>
+	<h3>Ingrese los datos del nuevo usuario:</h3> 
+	<br>
 	{!! Form::open(['route' => 'admin.users.store','method' => 'POST', 'files' => true]) !!}   <!-- Formulario para registrar nuevo usuario-->
 		@include('admin.template.partials.fieldsuser', ['routes' => 'create', 'variable' => 'si'])
 		<div class="form-group">

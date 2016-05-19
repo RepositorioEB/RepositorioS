@@ -6,7 +6,10 @@
 
 	@include('admin.template.partials.errors')
 	{!! Form::open(['route' => 'ovas.ovamember.store','method' => 'POST', 'files' => true]) !!}  <!-- Formulario para crear ovas-->
-		@include('admin.template.partials.fieldsova', ['routes' => 'create'])   <!-- Traer campos de ova-->
+		<br>
+        <h3>Ingrese los datos del nuevo OVA:</h3> 
+        <br>
+        @include('admin.template.partials.fieldsova', ['routes' => 'create'])   <!-- Traer campos de ova-->
 		
 		<div class="form-group">
 			<center>

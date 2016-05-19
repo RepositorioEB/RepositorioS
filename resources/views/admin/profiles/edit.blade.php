@@ -6,6 +6,9 @@
 	
 	@include('admin.template.partials.errors')
 	{!! Form::model($profiles, ['route' => ['admin.profiles.update',$profiles->id],'method' => 'PUT']) !!}   <!-- Formulario para modificar perfil-->
+		<br>
+		<h3>Ingrese los datos que desea modificar:</h3> 
+		<br>
 		@include('admin.template.partials.fieldsprofile')   <!-- Traer campos perfil-->
 		<div class="form-group">
 			<center>
