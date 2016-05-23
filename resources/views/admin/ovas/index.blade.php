@@ -26,7 +26,7 @@
 		<br>
 		<table class="table table-striped">
 			<thead>
-				<th>N°</th>
+				<th>Nº</th>
 				<th>Nombre</th>
 				<th>Puntuación</th>
 				<th>Tipo</th>

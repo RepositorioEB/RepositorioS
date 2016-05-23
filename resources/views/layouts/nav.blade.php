@@ -15,7 +15,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <a class="navbar-brand" href="{{url('rovaa')}}">ROVAA</a>      
+            <h1><a class="navbar-brand" href="{{url('rovaa')}}">ROVAA</a></h1>      
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="{{ url('/') }}" title="Home"><span class="glyphicon glyphicon-home"></span>Inicio</a></li>
@@ -45,21 +45,21 @@
                             <li><a href="{{ route('admin.ovas.create') }}" title="Nuevo OVA">Nuevo</a></li>
                             <li><a href="{{ route('admin.ovas.index') }}" title="Listar OVAS">Listar</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="">Categorías</a>
+                            <li><a href="{{ route('admin.categories.index') }}">Categorías</a>
                                 <ul>
                                     <li><a href="{{ route('admin.categories.create') }}" title="Nueva Categoría">Nueva</a></li>
                                     <li><a href="{{ route('admin.categories.index') }}" title="Listar Categoría">Listar</a></li>
                                 </ul>
                             </li>
                             <li role="separator" class="divider"></li>
-                            <li><a>Tipo</a>
+                            <li><a href="{{ route('admin.types.index') }}">Tipo</a>
                                 <ul>
                                     <li><a href="{{ route('admin.types.create') }}" title="Nuevo Tipo">Nuevo</a></li>
                                     <li><a href="{{ route('admin.types.index') }}" title="Listar Tipos">Listar</a></li>
                                 </ul>
                             </li>
                             <li role="separator" class="divider"></li>
-                            <li><a>Descargas</a>
+                            <li><a href="{{ route('admin.downloads.index') }}">Descargas</a>
                                 <ul>
                                     <li><a href="{{ route('admin.downloads.index') }}" title="Listar Descargas">Listar</a></li>
                                 </ul>
@@ -82,7 +82,7 @@
                             <li><a href="{{ route('admin.helps.create') }}" title="Nueva Ayuda">Nueva</a></li>
                             <li><a href="{{ route('admin.helps.index') }}" title="Listar Ayudas">Listar</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a>Problemas</a>
+                            <li><a href="{{ route('admin.problems.index') }}">Problemas</a>
                                 <ul>
                                     <li><a href="{{ route('admin.problems.create') }}" title="Nuevo Problema">Nuevo</a></li>
                                     <li><a href="{{ route('admin.problems.index') }}" title="Listar Problemas">Listar</a></li>

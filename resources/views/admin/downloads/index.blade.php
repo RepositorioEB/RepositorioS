@@ -12,7 +12,7 @@
 		<br>
 		<table class="table table-striped">                  <!-- Tabla con estilo-->
 			<thead>                 <!-- Cabeza tabla-->
-				<th>N°</th>               <!-- Nombre columna tabla-->
+				<th>Nº</th>               <!-- Nombre columna tabla-->
 				<th>Usuario</th>
 				<th>Ova</th>
 				<th>Fecha</th>

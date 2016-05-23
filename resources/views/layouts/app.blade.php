@@ -1,4 +1,4 @@
-<!DOCTYPE html> center
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <!-- Inicio Modificado (ed) -->

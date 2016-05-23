@@ -13,7 +13,7 @@
 		<br>
 		<table class="table table-striped">     <!-- Tabla con estilo-->
 			<thead>        <!-- Cabeza de la tabla-->
-				<th>N°</th>      <!-- Titulo columna-->
+				<th>Nº</th>      <!-- Titulo columna-->
 				<th>Nombre</th>
 				<th>Descripción</th>
 				<th>Acción</th>

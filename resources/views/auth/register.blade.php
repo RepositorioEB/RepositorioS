@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Registro')
 @section('content')
@@ -144,7 +144,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <button tyle "submit" class="close" data-dismiss="modal" aria-hiden="true">&times;</button>
+                    <button type="submit" class="close" data-dismiss="modal" aria-hiden="true">&times;</button>
                     <h3 class="modal-title"><label for="aviso"> Aviso</label></h3>
                 </div>
                 <div class="modal-body">
